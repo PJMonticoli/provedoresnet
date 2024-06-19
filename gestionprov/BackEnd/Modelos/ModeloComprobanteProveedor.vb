@@ -1,0 +1,50 @@
+﻿Public Class ModeloComprobanteProveedor
+    Public Shared Property NroInterno As String
+    Public Shared Property NroProveedor As Integer
+    Public Shared Property DescComp As Integer
+    Public Shared Property FechaCarga As String
+
+    Public Shared Property FechaVto As String
+    Public Shared Property TipoComp As Integer
+    Public Shared Property Provincia As String
+    Public Shared Property NroComp As String
+    Public Shared Property FechaComp As String
+    Public Shared Property FechaModificacion As String
+    Public Shared Property CondicionPago As Integer
+    Public Shared Property Observacion As String
+    Public Shared Property IvaProd As Decimal
+    Public Shared Property ImporteProd As Decimal
+    Public Shared Property IvaFinan As Decimal
+    Public Shared Property ImporteFinan As Decimal
+    Public Shared Property PercepIva As Decimal
+    Public Shared Property PercepGan As Decimal
+    Public Shared Property TotalPercepIB As Decimal
+    Public Shared Property ImporteNoImp As Decimal
+    Public Shared Property TotalComp As Decimal
+    Public Shared Property MarcaAcumulada As Char
+    Public Shared Property MesImputacion As String
+    Public Shared Property CAI As String
+    Public Shared Property VtoCAI As String
+    Public Shared Property CodBarra As String
+    Public Shared Property CotizacionDolar As Decimal
+    Public Shared Property CodEstadoPago As Integer
+    Public Shared Property SaldoPendiente As String
+    Public Shared Property NroOrdenCarga As String
+    Public Shared Property PS1 As String
+    Public Shared Property PS2 As String
+    Public Shared Property PS3 As String
+    Public Shared Property TipoGrupo As String
+    Public Shared Property Iva21 As Decimal
+    Public Shared Property Iva105 As Decimal
+    Public Shared Property Iva27 As Decimal
+    Public Shared Property Imp21 As Decimal
+    Public Shared Property Imp105 As Decimal
+    Public Shared Property Imp27 As Decimal
+    Public Shared Property FechaIngresoProveedores As String
+    Public Shared Property CodOperadorIngresoComp As Integer
+    Public Shared Property CAEAInformado As Integer
+    Public Shared Property FechaCAEAInf As String
+    Public Shared Property Iva25 As Decimal
+    Public Shared Property Imp25 As Decimal
+    Public Shared Property DetalleOrden As List(Of ModeloDetalleOrdenComprobante)
+End Class

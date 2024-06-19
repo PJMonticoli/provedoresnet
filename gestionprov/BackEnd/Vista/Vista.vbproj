@@ -1,0 +1,828 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1430D3DB-198B-410B-9B1D-E84E222918CC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Vista.My.MyApplication</StartupObject>
+    <RootNamespace>Vista</RootNamespace>
+    <AssemblyName>Vista</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Vista.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Vista.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.AcroPDFLib">
+      <HintPath>..\..\..\..\..\Proveedores\AsignadorPDF - David para ver como llamar a .net\WindowsApplication1\obj\Debug\AxInterop.AcroPDFLib.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.9\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Gcef.Data.DataEngine, Version=3.0.2.0, Culture=neutral, PublicKeyToken=0b5e1563d2869208, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gcef.Data.DataEngine.3.0.2\lib\net40\Gcef.Data.DataEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Gcef.Data.ExpressionInfo, Version=3.0.2.0, Culture=neutral, PublicKeyToken=0b5e1563d2869208, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gcef.Data.ExpressionInfo.3.0.2\lib\net40\Gcef.Data.ExpressionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Gcef.Data.VBFunctionLib, Version=3.0.2.0, Culture=neutral, PublicKeyToken=0b5e1563d2869208, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gcef.Data.VBFunctionLib.3.0.2\lib\net40\Gcef.Data.VBFunctionLib.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports, Version=15.2.4.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.ActiveReports.15.2.4\lib\net462\GrapeCity.ActiveReports.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Chart, Version=15.2.2.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.ActiveReports.Chart.15.2.2\lib\net462\GrapeCity.ActiveReports.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Chart.Win, Version=15.2.2.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.ActiveReports.Chart.Win.15.2.2\lib\net462\GrapeCity.ActiveReports.Chart.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Core.DataProviders, Version=2.0.7.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.ActiveReports.Core.DataProviders.2.0.7\lib\net462\GrapeCity.ActiveReports.Core.DataProviders.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Core.Document, Version=2.1.4.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.ActiveReports.Core.Document.2.1.4\lib\net462\GrapeCity.ActiveReports.Core.Document.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Core.Document.Drawing.Gc, Version=2.1.4.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.ActiveReports.Core.Document.Drawing.Gc.2.1.4\lib\net462\GrapeCity.ActiveReports.Core.Document.Drawing.Gc.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Core.Document.Drawing.Gdi, Version=2.1.4.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.ActiveReports.Core.Document.Drawing.Gdi.2.1.4\lib\net462\GrapeCity.ActiveReports.Core.Document.Drawing.Gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Core.Drawing.Gc, Version=2.3.5.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.ActiveReports.Core.Drawing.Gc.2.3.5\lib\net462\GrapeCity.ActiveReports.Core.Drawing.Gc.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Core.Drawing.Gdi, Version=2.3.5.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.ActiveReports.Core.Drawing.Gdi.2.3.5\lib\net462\GrapeCity.ActiveReports.Core.Drawing.Gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Core.Export.Image.Page, Version=2.3.5.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.ActiveReports.Core.Export.Image.Page.2.3.5\lib\net462\GrapeCity.ActiveReports.Core.Export.Image.Page.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Core.Export.Tiff.Section, Version=2.1.4.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.ActiveReports.Core.Export.Tiff.Section.2.1.4\lib\net462\GrapeCity.ActiveReports.Core.Export.Tiff.Section.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Core.Rdl, Version=2.3.5.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.ActiveReports.Core.Rdl.2.3.5\lib\net462\GrapeCity.ActiveReports.Core.Rdl.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Core.Rendering, Version=2.3.5.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.ActiveReports.Core.Rendering.2.3.5\lib\net462\GrapeCity.ActiveReports.Core.Rendering.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Core.Scripting, Version=2.3.5.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.ActiveReports.Core.Scripting.2.3.5\lib\net462\GrapeCity.ActiveReports.Core.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Design.Win, Version=15.2.4.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.ActiveReports.Design.Win.15.2.4\lib\net462\GrapeCity.ActiveReports.Design.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Document, Version=15.2.4.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.ActiveReports.Document.15.2.4\lib\net462\GrapeCity.ActiveReports.Document.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Export.Image, Version=15.2.4.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.ActiveReports.Export.Image.15.2.4\lib\net462\GrapeCity.ActiveReports.Export.Image.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Serializer, Version=15.2.4.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.ActiveReports.Serializer.VS2022.15.2.4\lib\net472\GrapeCity.ActiveReports.Serializer.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Viewer.Common, Version=15.2.4.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.ActiveReports.Viewer.Common.15.2.4\lib\net462\GrapeCity.ActiveReports.Viewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Viewer.Win, Version=15.2.4.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.ActiveReports.Viewer.Win.15.2.4\lib\net462\GrapeCity.ActiveReports.Viewer.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Win, Version=15.2.4.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.ActiveReports.15.2.4\lib\net462\GrapeCity.ActiveReports.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.DataVisualization.Chart, Version=0.4.23.0, Culture=neutral, PublicKeyToken=8dbeb54e07a9de91, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.DataVisualization.Chart.0.4.23\lib\net462\GrapeCity.DataVisualization.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.Documents.Common, Version=4.2.0.722, Culture=neutral, PublicKeyToken=d55d733d2bfd5065, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.Documents.Common.4.2.0.722\lib\net461\GrapeCity.Documents.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.Documents.Common.Windows, Version=4.2.0.722, Culture=neutral, PublicKeyToken=d55d733d2bfd5065, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.Documents.Common.Windows.4.2.0.722\lib\net461\GrapeCity.Documents.Common.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.Documents.DX.Windows, Version=4.2.0.722, Culture=neutral, PublicKeyToken=d55d733d2bfd5065, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.Documents.DX.Windows.4.2.0.722\lib\net461\GrapeCity.Documents.DX.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.Documents.Imaging, Version=4.2.0.722, Culture=neutral, PublicKeyToken=d55d733d2bfd5065, processorArchitecture=MSIL">
+      <HintPath>..\packages\GrapeCity.Documents.Imaging.4.2.0.722\lib\net461\GrapeCity.Documents.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.AcroPDFLib">
+      <HintPath>..\..\..\..\..\Proveedores\AsignadorPDF - David para ver como llamar a .net\WindowsApplication1\obj\Debug\Interop.AcroPDFLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.Scripting">
+      <HintPath>..\..\..\..\..\Proveedores\AsignadorPDF - David para ver como llamar a .net\WindowsApplication1\obj\Debug\Interop.Scripting.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=7.2.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.1\lib\net461\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.bouncy-castle-connector, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.2\lib\net461\itext.bouncy-castle-connector.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.commons, Version=7.2.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.commons.7.2.1\lib\net461\itext.commons.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms, Version=7.2.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.1\lib\net461\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io, Version=7.2.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.1\lib\net461\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel, Version=7.2.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.1\lib\net461\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout, Version=7.2.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.1\lib\net461\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=7.2.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.1\lib\net461\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign, Version=7.2.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.1\lib\net461\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=7.2.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.1\lib\net461\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg, Version=7.2.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.1\lib\net461\itext.svg.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.5.0.0\lib\net461\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.5.0.0\lib\net461\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=7.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Abstractions.7.0.3\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=7.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.7.0.3\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=7.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.7.0.3\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=7.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.7.0.3\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.DpiAwareness, Version=6.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.DpiAwareness.6.1.28916\lib\net46\Microsoft.VisualStudio.DpiAwareness.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=7.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.7.0.3\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.7.2\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.7.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Formularios\FrmAltaCAI.Designer.vb">
+      <DependentUpon>FrmAltaCAI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmAltaCAI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmAltaCondPago.Designer.vb">
+      <DependentUpon>FrmAltaCondPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmAltaCondPago.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmAltaIngresoPendiente.Designer.vb">
+      <DependentUpon>FrmAltaIngresoPendiente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmAltaIngresoPendiente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmAsignadorPDF.Designer.vb">
+      <DependentUpon>FrmAsignadorPDF.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmAsignadorPDF.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmBuscarCC.Designer.vb">
+      <DependentUpon>FrmBuscarCC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmBuscarCC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmBuscarInsumos.Designer.vb">
+      <DependentUpon>FrmBuscarInsumos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmBuscarInsumos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmCierre.Designer.vb">
+      <DependentUpon>FrmCierre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmCierre.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmCreditoDebitoInt.Designer.vb">
+      <DependentUpon>FrmCreditoDebitoInt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmCreditoDebitoInt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmImagenComprobante.Designer.vb">
+      <DependentUpon>FrmImagenComprobante.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmImagenComprobante.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmOperacionExportacion.Designer.vb">
+      <DependentUpon>FrmOperacionExportacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmOperacionExportacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmPañol.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmPañol.Designer.vb">
+      <DependentUpon>FrmPañol.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmBuscarComprobante.Designer.vb">
+      <DependentUpon>FrmBuscarComprobante.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmBuscarComprobante.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmCreditoDebito.Designer.vb">
+      <DependentUpon>FrmCreditoDebito.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmCreditoDebito.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmFiltroInforme.Designer.vb">
+      <DependentUpon>FrmFiltroInforme.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmFiltroInforme.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmOperaciones.Designer.vb">
+      <DependentUpon>FrmOperaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmOperaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmPrincipal.Designer.vb">
+      <DependentUpon>FrmPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmBuscarProveedor.Designer.vb">
+      <DependentUpon>FrmBuscarProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmBuscarProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmLogin.Designer.vb">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Informes\FrmInformeVisualizador.Designer.vb">
+      <DependentUpon>FrmInformeVisualizador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\FrmInformeVisualizador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobanteAgrupadoPorProveedor.Designer.vb">
+      <DependentUpon>RptImpresoComprobanteAgrupadoPorProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobanteAgrupadoPorProveedor.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobanteDia.Designer.vb">
+      <DependentUpon>RptImpresoComprobanteDia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobanteDia.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobantePorTipoComp.Designer.vb">
+      <DependentUpon>RptImpresoComprobantePorTipoComp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobantePorTipoComp.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobantePorTipoCompExp.Designer.vb">
+      <DependentUpon>RptImpresoComprobantePorTipoCompExp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobantePorTipoCompExp.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobantePorTipoCompPorInsumo.Designer.vb">
+      <DependentUpon>RptImpresoComprobantePorTipoCompPorInsumo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobantePorTipoCompPorInsumo.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobantePorTipoCompPorInsumoExp.Designer.vb">
+      <DependentUpon>RptImpresoComprobantePorTipoCompPorInsumoExp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobantePorTipoCompPorInsumoExp.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobantesImpuestoPais75.Designer.vb">
+      <DependentUpon>RptImpresoComprobantesImpuestoPais75.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobantesImpuestoPais75.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobantesProveedores.Designer.vb">
+      <DependentUpon>RptImpresoComprobantesProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobantesProveedores.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoControlDiario.Designer.vb">
+      <DependentUpon>RptImpresoControlDiario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoControlDiario.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoImagenComprobante.Designer.vb">
+      <DependentUpon>RptImpresoImagenComprobante.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoImagenComprobante.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoInsumos.Designer.vb">
+      <DependentUpon>RptImpresoInsumos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoInsumos.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoInsumosComprados.Designer.vb">
+      <DependentUpon>RptImpresoInsumosComprados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoInsumosComprados.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoRetencionesIBCba.Designer.vb">
+      <DependentUpon>RptImpresoRetencionesIBCba.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoRetencionesIBCba.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoPercepcionesGan.Designer.vb">
+      <DependentUpon>RptImpresoPercepcionesGan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoPercepcionesGan.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoRetencionesGan.Designer.vb">
+      <DependentUpon>RptImpresoRetencionesGan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoRetencionesGan.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoPercepcionesIva.Designer.vb">
+      <DependentUpon>RptImpresoPercepcionesIva.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoPercepcionesIva.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <!-- agregado -->
+    <Compile Include="Informes\RptComprobanteIndustrialConsuman.Designer.vb">
+      <DependentUpon>RptComprobanteIndustrialConsuman.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptComprobanteIndustrialConsuman.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoResumenOP.Designer.vb">
+      <DependentUpon>RptImpresoResumenOP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoResumenOP.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoPercepcionesIBPorProv.Designer.vb">
+      <DependentUpon>RptImpresoPercepcionesIBPorProv.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoPercepcionesIBPorProv.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobante.Designer.vb">
+      <DependentUpon>RptImpresoComprobante.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobante.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoAsientoCompras.Designer.vb">
+      <DependentUpon>RptImpresoAsientoCompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoAsientoCompras.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoListadoCuenta.Designer.vb">
+      <DependentUpon>RptImpresoListadoCuenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoListadoCuenta.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobantePendiente.Designer.vb">
+      <DependentUpon>RptImpresoComprobantePendiente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobantePendiente.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobantePendienteSinGrupo.Designer.vb">
+      <DependentUpon>RptImpresoComprobantePendienteSinGrupo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobantePendienteSinGrupo.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobantePendienteAgrupado.Designer.vb">
+      <DependentUpon>RptImpresoComprobantePendienteAgrupado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\RptImpresoComprobantePendienteAgrupado.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\ModuloComboBox.vb" />
+    <Compile Include="Modulos\ModuloFunciones.vb" />
+    <Compile Include="Modulos\ModuloGrillas.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Formularios\FrmAltaCAI.resx">
+      <DependentUpon>FrmAltaCAI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmAltaCondPago.resx">
+      <DependentUpon>FrmAltaCondPago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmAltaIngresoPendiente.resx">
+      <DependentUpon>FrmAltaIngresoPendiente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmAsignadorPDF.resx">
+      <DependentUpon>FrmAsignadorPDF.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmBuscarCC.resx">
+      <DependentUpon>FrmBuscarCC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmBuscarInsumos.resx">
+      <DependentUpon>FrmBuscarInsumos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmCierre.resx">
+      <DependentUpon>FrmCierre.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmCreditoDebitoInt.resx">
+      <DependentUpon>FrmCreditoDebitoInt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmImagenComprobante.resx">
+      <DependentUpon>FrmImagenComprobante.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmOperacionExportacion.resx">
+      <DependentUpon>FrmOperacionExportacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmPañol.resx">
+      <DependentUpon>FrmPañol.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmBuscarComprobante.resx">
+      <DependentUpon>FrmBuscarComprobante.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmBuscarProveedor.resx">
+      <DependentUpon>FrmBuscarProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmCreditoDebito.resx">
+      <DependentUpon>FrmCreditoDebito.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmFiltroInforme.resx">
+      <DependentUpon>FrmFiltroInforme.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmOperaciones.resx">
+      <DependentUpon>FrmOperaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmLogin.resx">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\FrmInformeVisualizador.resx">
+      <DependentUpon>FrmInformeVisualizador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoComprobanteAgrupadoPorProveedor.resx">
+      <DependentUpon>RptImpresoComprobanteAgrupadoPorProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoComprobanteDia.resx">
+      <DependentUpon>RptImpresoComprobanteDia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoComprobantePendiente.resx">
+      <DependentUpon>RptImpresoComprobantePendiente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoComprobantePendienteAgrupado.resx">
+      <DependentUpon>RptImpresoComprobantePendienteAgrupado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoComprobantePendienteSinGrupo.resx">
+      <DependentUpon>RptImpresoComprobantePendienteSinGrupo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoComprobantePorTipoComp.resx">
+      <DependentUpon>RptImpresoComprobantePorTipoComp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoComprobantePorTipoCompExp.resx">
+      <DependentUpon>RptImpresoComprobantePorTipoCompExp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoComprobantePorTipoCompPorInsumo.resx">
+      <DependentUpon>RptImpresoComprobantePorTipoCompPorInsumo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoComprobantePorTipoCompPorInsumoExp.resx">
+      <DependentUpon>RptImpresoComprobantePorTipoCompPorInsumoExp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoComprobantesImpuestoPais75.resx">
+      <DependentUpon>RptImpresoComprobantesImpuestoPais75.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoComprobantesProveedores.resx">
+      <DependentUpon>RptImpresoComprobantesProveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoControlDiario.resx">
+      <DependentUpon>RptImpresoControlDiario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoImagenComprobante.resx">
+      <DependentUpon>RptImpresoImagenComprobante.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoInsumosComprados.resx">
+      <DependentUpon>RptImpresoInsumosComprados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoPercepcionesIva.resx">
+      <DependentUpon>RptImpresoPercepcionesIva.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoInsumos.resx">
+      <DependentUpon>RptImpresoInsumos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoRetencionesIBCba.resx">
+      <DependentUpon>RptImpresoRetencionesIBCba.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoPercepcionesGan.resx">
+      <DependentUpon>RptImpresoPercepcionesGan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoRetencionesGan.resx">
+      <DependentUpon>RptImpresoRetencionesGan.vb</DependentUpon>
+    </EmbeddedResource>
+    <!--  Agregado 11/01/2024 -->
+    <EmbeddedResource Include="Informes\RptComprobanteIndustrialConsuman.resx">
+      <DependentUpon>RptComprobanteIndustrialConsuman.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoListadoCuenta.resx">
+      <DependentUpon>RptImpresoListadoCuenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <!--Agregado el 20/11/2023-->
+    <EmbeddedResource Include="Informes\RptImpresoPercepcionesIBPorProv.resx">
+      <DependentUpon>RptImpresoPercepcionesIBPorProv.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoResumenOP.resx">
+      <DependentUpon>RptImpresoResumenOP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoComprobante.resx">
+      <DependentUpon>RptImpresoComprobante.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\RptImpresoAsientoCompras.resx">
+      <DependentUpon>RptImpresoAsientoCompras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClasesGlobal\ClasesGlobal.vbproj">
+      <Project>{2fdb5d77-e66d-4b95-9f74-5f3c08d20911}</Project>
+      <Name>ClasesGlobal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Controles\Controles.vbproj">
+      <Project>{43488b95-a7a4-45ce-9830-4ceb48ed3df9}</Project>
+      <Name>Controles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelos\Modelos.vbproj">
+      <Project>{50c9734a-bd84-4258-86d7-2ca17021b73f}</Project>
+      <Name>Modelos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-guma-2009-plano.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nueva-pagina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-guma-2009-plano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono cerrar FN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pilas-de-almacenamiento-de-datos-con-signo-mas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pilas-de-almacenamiento-de-datos-con-signo-mas%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="DAO">
+      <Guid>{00025E04-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>3</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MSDATASRC">
+      <Guid>{7C0FFAB0-CD84-11D0-949A-00A0C91110ED}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="StdFormat">
+      <Guid>{6B263850-900B-11D0-9484-00A0C91110ED}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrar.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

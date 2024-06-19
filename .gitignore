@@ -1,0 +1,67 @@
+# Archivos de compilación de Visual Studio
+bin/
+obj/
+Debug/
+Release/
+TestResults/
+
+# Archivos de configuración del entorno de desarrollo
+.vscode/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Paquetes NuGet
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Archivos de publicación y paquetes web
+*.Publish.xml
+*.PublishScripts/
+
+# Archivos de configuración y bases de datos locales
+appsettings.Development.json
+appsettings.Local.json
+local.settings.json
+*.db
+*.mdf
+*.ldf
+
+# Archivos de Logs
+*.log
+*.tlog
+
+# Archivos de caché y otros archivos temporales
+*.cache
+*.config
+*.bak
+*.swp
+*.temp
+*.tmp
+*.pid
+*.log
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de librerías de terceros (GrapeCity, Gunabutton)
+# Si estas librerías se instalan a través de NuGet, la carpeta packages/ ya los cubrirá
+# Si no, excluye cualquier directorio específico de estas librerías que no necesites versionar
+# Por ejemplo:
+lib/grapecity/
+lib/gunabutton/
+
+# Archivos de configuración de Rider (JetBrains)
+.idea/
+
+# Archivos de configuración de resharper
+_ReSharper.Caches/
+_ReSharper/
